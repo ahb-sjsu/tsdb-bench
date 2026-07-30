@@ -1,0 +1,103 @@
+{
+ "db": "clickhouse",
+ "phases": {
+  "M": {
+   "cfg": {
+    "hosts": 200,
+    "fields": 10,
+    "interval": 10,
+    "span": 259200
+   },
+   "ingest": {
+    "wall_s": 4.25,
+    "send_s": 4.25,
+    "batch_p50_ms": 47.6,
+    "batch_p95_ms": 65.6,
+    "rows": 5184000,
+    "points": 51840000,
+    "points_per_s": 12197647,
+    "rows_per_s": 1219764
+   },
+   "disk_bytes": 430322009,
+   "disk_bytes_after_compress": 562070282,
+   "compression": "OPTIMIZE TABLE FINAL",
+   "queries": {
+    "Q1_raw_1h": {
+     "rows": 360,
+     "cold_ms": 11.2,
+     "warm_p50_ms": 7.9,
+     "warm_p95_ms": 8.4
+    },
+    "Q2_downsample_12h": {
+     "rows": 721,
+     "cold_ms": 10.9,
+     "warm_p50_ms": 9.6,
+     "warm_p95_ms": 11.7
+    },
+    "Q3_groupby_1h": {
+     "rows": 200,
+     "cold_ms": 19.5,
+     "warm_p50_ms": 19.4,
+     "warm_p95_ms": 21.3
+    },
+    "Q4_fanout_max_full": {
+     "rows": 200,
+     "cold_ms": 23.5,
+     "warm_p50_ms": 23.4,
+     "warm_p95_ms": 74.8
+    },
+    "Q5_global_agg": {
+     "rows": 1,
+     "cold_ms": 13.9,
+     "warm_p50_ms": 12.6,
+     "warm_p95_ms": 42.8
+    }
+   }
+  },
+  "H": {
+   "cfg": {
+    "hosts": 20000,
+    "fields": 1,
+    "interval": 60,
+    "span": 86400
+   },
+   "ingest": {
+    "wall_s": 12.14,
+    "send_s": 12.14,
+    "batch_p50_ms": 24.1,
+    "batch_p95_ms": 34.8,
+    "rows": 28800000,
+    "points": 28800000,
+    "points_per_s": 2372322,
+    "rows_per_s": 2372322
+   },
+   "disk_bytes": 1440307376,
+   "disk_bytes_after_compress": null,
+   "compression": null,
+   "queries": {
+    "H1_series_raw_24h": {
+     "rows": 1440,
+     "cold_ms": 12.9,
+     "warm_p50_ms": 9.6,
+     "warm_p95_ms": 11.4
+    },
+    "H2_max_by_host": {
+     "rows": 20000,
+     "cold_ms": 86.1,
+     "warm_p50_ms": 58.8,
+     "warm_p95_ms": 69.8
+    }
+   }
+  }
+ },
+ "temps": {
+  "M": {
+   "0": 77.0,
+   "1": 69.0
+  },
+  "H": {
+   "0": 76.0,
+   "1": 70.0
+  }
+ }
+}

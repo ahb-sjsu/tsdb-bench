@@ -1,0 +1,103 @@
+{
+ "db": "postgres",
+ "phases": {
+  "M": {
+   "cfg": {
+    "hosts": 200,
+    "fields": 10,
+    "interval": 10,
+    "span": 259200
+   },
+   "ingest": {
+    "wall_s": 55.53,
+    "send_s": 54.8,
+    "batch_p50_ms": 519.0,
+    "batch_p95_ms": 895.2,
+    "rows": 5184000,
+    "points": 51840000,
+    "points_per_s": 933549,
+    "rows_per_s": 93354
+   },
+   "disk_bytes": 2100037851,
+   "disk_bytes_after_compress": null,
+   "compression": null,
+   "queries": {
+    "Q1_raw_1h": {
+     "rows": 360,
+     "cold_ms": 16.0,
+     "warm_p50_ms": 2.0,
+     "warm_p95_ms": 2.3
+    },
+    "Q2_downsample_12h": {
+     "rows": 721,
+     "cold_ms": 63.6,
+     "warm_p50_ms": 11.0,
+     "warm_p95_ms": 11.8
+    },
+    "Q3_groupby_1h": {
+     "rows": 200,
+     "cold_ms": 378.1,
+     "warm_p50_ms": 231.2,
+     "warm_p95_ms": 238.4
+    },
+    "Q4_fanout_max_full": {
+     "rows": 200,
+     "cold_ms": 498.1,
+     "warm_p50_ms": 510.8,
+     "warm_p95_ms": 513.5
+    },
+    "Q5_global_agg": {
+     "rows": 1,
+     "cold_ms": 283.2,
+     "warm_p50_ms": 285.7,
+     "warm_p95_ms": 287.8
+    }
+   }
+  },
+  "H": {
+   "cfg": {
+    "hosts": 20000,
+    "fields": 1,
+    "interval": 60,
+    "span": 86400
+   },
+   "ingest": {
+    "wall_s": 478.77,
+    "send_s": 478.23,
+    "batch_p50_ms": 523.5,
+    "batch_p95_ms": 4207.4,
+    "rows": 28800000,
+    "points": 28800000,
+    "points_per_s": 60154,
+    "rows_per_s": 60154
+   },
+   "disk_bytes": 5836055267,
+   "disk_bytes_after_compress": null,
+   "compression": null,
+   "queries": {
+    "H1_series_raw_24h": {
+     "rows": 1440,
+     "cold_ms": 22.8,
+     "warm_p50_ms": 5.9,
+     "warm_p95_ms": 6.2
+    },
+    "H2_max_by_host": {
+     "rows": 20000,
+     "cold_ms": 2618.8,
+     "warm_p50_ms": 2527.5,
+     "warm_p95_ms": 2547.0
+    }
+   }
+  }
+ },
+ "temps": {
+  "M": {
+   "0": 78.0,
+   "1": 73.0
+  },
+  "H": {
+   "0": 78.0,
+   "1": 75.0
+  }
+ }
+}

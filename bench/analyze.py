@@ -73,8 +73,9 @@ def main():
         raw = p["M"]["disk_bytes"] / mpts
         comp = p["M"].get("disk_bytes_after_compress")
         comp = f"{comp / mpts:.2f}" if comp else "—"
-        hd = (p["H"]["disk_bytes"] - p["M"].get(
-            "disk_bytes_after_compress", p["M"]["disk_bytes"])) / hpts
+        base = (p["M"].get("disk_bytes_after_compress")
+                or p["M"]["disk_bytes"])
+        hd = (p["H"]["disk_bytes"] - base) / hpts
         lines.append(f"| {LABEL[db]} | {raw:.2f} | {comp} | {max(hd,0):.2f} |")
 
     for phase, qs in (("M", QM), ("H", QH)):

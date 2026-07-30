@@ -1,0 +1,74 @@
+[gen] building payloads (full)
+[gen] done in 278s: M=5,184,000 rows, H=28,800,000 rows
+[timescale] starting
+  [timescale/M] ingest 43.34s (1,196,123 pts/s)
+    Q1_raw_1h: rows=360 cold=39.2ms p50=2.2ms
+    Q2_downsample_12h: rows=721 cold=79.5ms p50=11.3ms
+    Q3_groupby_1h: rows=200 cold=32.2ms p50=30.0ms
+    Q4_fanout_max_full: rows=200 cold=336.7ms p50=270.1ms
+    Q5_global_agg: rows=1 cold=154.7ms p50=148.7ms
+  [timescale/H] ingest 238.17s (120,922 pts/s)
+    H1_series_raw_24h: rows=1440 cold=32.9ms p50=5.7ms
+    H2_max_by_host: rows=20000 cold=1251.3ms p50=1203.6ms
+[thermal] {0: 78.0, 1: 81.0} >= 80.0, cooling to 76.0
+[postgres] starting
+  [postgres/M] ingest 55.53s (933,549 pts/s)
+    Q1_raw_1h: rows=360 cold=16.0ms p50=2.0ms
+    Q2_downsample_12h: rows=721 cold=63.6ms p50=11.0ms
+    Q3_groupby_1h: rows=200 cold=378.1ms p50=231.2ms
+    Q4_fanout_max_full: rows=200 cold=498.1ms p50=510.8ms
+    Q5_global_agg: rows=1 cold=283.2ms p50=285.7ms
+  [postgres/H] ingest 478.77s (60,154 pts/s)
+    H1_series_raw_24h: rows=1440 cold=22.8ms p50=5.9ms
+    H2_max_by_host: rows=20000 cold=2618.8ms p50=2527.5ms
+[influx] starting
+  [influx/M] ingest 27.41s (1,891,280 pts/s)
+    Q1_raw_1h: rows=363 cold=27.5ms p50=14.7ms
+    Q2_downsample_12h: rows=723 cold=19.9ms p50=19.2ms
+    Q3_groupby_1h: rows=202 cold=48.4ms p50=46.6ms
+    Q4_fanout_max_full: rows=202 cold=249.9ms p50=244.8ms
+    Q5_global_agg: rows=3 cold=460.2ms p50=443.0ms
+  [influx/H] ingest 80.54s (357,586 pts/s)
+    H1_series_raw_24h: rows=1442 cold=28.1ms p50=24.4ms
+    H2_max_by_host: rows=20002 cold=7023.2ms p50=6141.3ms
+[victoria] starting
+  [victoria/M] ingest 5.07s (10,224,852 pts/s)
+    Q1_raw_1h: rows=361 cold=12.9ms p50=3.3ms
+    Q2_downsample_12h: rows=721 cold=8.6ms p50=3.8ms
+    Q3_groupby_1h: rows=200 cold=16.2ms p50=7.0ms
+    Q4_fanout_max_full: rows=200 cold=37.2ms p50=5.1ms
+    Q5_global_agg: rows=1 cold=23.1ms p50=18.7ms
+  [victoria/H] ingest 20.29s (1,419,418 pts/s)
+    H1_series_raw_24h: rows=1440 cold=15.8ms p50=5.0ms
+    H2_max_by_host: rows=20000 cold=455.7ms p50=109.6ms
+[clickhouse] starting
+  [clickhouse/M] ingest 4.25s (12,197,647 pts/s)
+    Q1_raw_1h: rows=360 cold=11.2ms p50=7.9ms
+    Q2_downsample_12h: rows=721 cold=10.9ms p50=9.6ms
+    Q3_groupby_1h: rows=200 cold=19.5ms p50=19.4ms
+    Q4_fanout_max_full: rows=200 cold=23.5ms p50=23.4ms
+    Q5_global_agg: rows=1 cold=13.9ms p50=12.6ms
+  [clickhouse/H] ingest 12.14s (2,372,322 pts/s)
+    H1_series_raw_24h: rows=1440 cold=12.9ms p50=9.6ms
+    H2_max_by_host: rows=20000 cold=86.1ms p50=58.8ms
+[questdb] starting
+  [questdb/M] ingest 21.76s (2,382,352 pts/s)
+    Q1_raw_1h: rows=360 cold=40.0ms p50=4.6ms
+    Q2_downsample_12h: rows=721 cold=41.8ms p50=6.0ms
+    Q3_groupby_1h: rows=200 cold=17.0ms p50=3.4ms
+    Q4_fanout_max_full: rows=200 cold=1030.8ms p50=12.6ms
+    Q5_global_agg: rows=1 cold=18.7ms p50=7.0ms
+  [questdb/H] ingest 40.15s (717,310 pts/s)
+    H1_series_raw_24h: rows=1440 cold=30.7ms p50=13.8ms
+    H2_max_by_host: rows=20000 cold=127.7ms p50=84.5ms
+[prometheus] starting
+  [prometheus/M] ingest 866.8s (59,806 pts/s)
+    Q1_raw_1h: rows=361 cold=7.0ms p50=3.7ms
+    Q2_downsample_12h: rows=721 cold=4.9ms p50=5.3ms
+    Q3_groupby_1h: rows=200 cold=24.0ms p50=23.0ms
+    Q4_fanout_max_full: rows=200 cold=581.8ms p50=614.9ms
+    Q5_global_agg: rows=1 cold=624.3ms p50=628.8ms
+  [prometheus/H] ingest 214.77s (134,096 pts/s)
+    H1_series_raw_24h: rows=1440 cold=12.1ms p50=6.3ms
+    H2_max_by_host: rows=20000 cold=3774.9ms p50=3597.8ms
+[bench] campaign complete

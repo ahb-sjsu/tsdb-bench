@@ -1,0 +1,29 @@
+{
+ "mode": "full",
+ "M": {
+  "hosts": 200,
+  "fields": 10,
+  "interval": 10,
+  "span": 259200
+ },
+ "H": {
+  "hosts": 20000,
+  "fields": 1,
+  "interval": 60,
+  "span": 86400
+ },
+ "batch_rows": 10000,
+ "streams": 6,
+ "warm_reps": 15,
+ "started": "2026-07-30T11:10:35Z",
+ "images": [
+  "tsdb-prometheus prom/prometheus:v2.53.0",
+  "tsdb-questdb questdb/questdb:8.1.1",
+  "tsdb-clickhouse clickhouse/clickhouse-server:24.8",
+  "tsdb-victoria victoriametrics/victoria-metrics:v1.102.1",
+  "tsdb-influx influxdb:2.7",
+  "tsdb-postgres postgres:16",
+  "tsdb-timescale timescale/timescaledb:latest-pg16",
+  ""
+ ]
+}
